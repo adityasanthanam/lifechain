@@ -1,0 +1,199 @@
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-md-12" ng-init="employee = true; employer = false;">
+                        <button class="btn btn-primary" ng-click="employee = true; employer = false;">Employee</button>
+                        <button class="btn btn-primary" ng-click="employee = false; employer = true;">Employer</button>
+                    </div>
+                    <div class="tab-pane active" ng-if="employee" ng-controller="employeecontrol" style="margin-top:50px;">
+                        <h4>Employee Registration Form</h4>
+
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control" id="name" ng-model="employee.name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="surname">Surname:</label>
+                                    <input type="text" class="form-control" id="surname" ng-model="employee.surname">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email"><span class="mandatory">*</span>Email:</label>
+                                    <input type="email" class="form-control" id="email"  ng-model="employee.email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="age"><span class="mandatory">*</span>Age:</label>
+                                    <input type="number" class="form-control" id="age"  ng-model="employee.age">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="password"><span class="mandatory">*</span>Password:</label>
+                                    <input type="password" class="form-control" id="password"  ng-model="employee.password" ng-change="validatePassword(employee)">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="confirmpassword"><span class="mandatory">*</span>Confirm Password:</label>
+                                    <input type="password" class="form-control" id="confirmpassword"   ng-model="employee.confirmpassword" ng-keyup="validatePassword(employee)">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gender"><span class="mandatory">*</span>Gender:</label>
+                                    <select class="form-control" id="gender">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Others</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="address"><span class="mandatory">*</span>Address:</label>
+                                    <input type="text" class="form-control" id="address"  ng-model="employee.address">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="country"><span class="mandatory">*</span>Country:</label>
+                                    <select class="form-control" id="country" ng-model="employee.country" ng-change="coun_change(employee.country)">
+                                        <option ng-repeat="count in country">{{count.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="passport"><span class="mandatory">*</span>Passport Number:</label>
+                                    <input type="number" class="form-control" id="passport"  ng-model="employee.passport">
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-if="aadharno">
+                                <div class="form-group">
+                                    <label for="aadhaar"><span class="mandatory" >*</span>Aadhaar Id:</label>
+                                    <input type="number" class="form-control" id="aadhaar"  ng-model="employee.aadhaar">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pincode"><span class="mandatory">*</span>Pincode:</label>
+                                    <input type="number" class="form-control" id="pincode"  ng-model="employee.pincode">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pan"><span class="mandatory">*</span>PAN Number:</label>
+                                    <input type="text" class="form-control" id="pan"  ng-model="employee.pan">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="skills"><span class="mandatory">*</span>Skills:</label>
+                                    <input type="text" class="form-control" id="skills"  ng-model="employee.skills">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="file"><span class="mandatory">*</span>Upload Resume</label>
+                                    <input type="file" class="form-control" id="file"  ng-model="employee.uploads">
+                                </div>
+                            </div>
+                            <div class="col-md-12 pull-right">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-sm btn-primary" ng-click="save(employee)"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                                    <button type="reset" class="btn btn-sm btn-danger" ><i class="fa fa-ban"></i> Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane active" ng-if="employer" ng-controller="employercontrol" style="margin-top:50px;">
+                        <h4>Employer Registration Form</h4>
+                        <form class="col-md-12 ">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="orgname">Organisation Name:</label>
+                                    <input type="text" class="form-control" id="orgname" placeholder="Enter your organisation name" name="orgname" ng-model="employer.name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="regnum">Registration Number:</label>
+                                    <input type="text" class="form-control" id="regnum" placeholder="Registration Number" name="regnum"  ng-model="employer.regnum">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="tan">TAN Number:</label>
+                                    <input type="text" class="form-control" id="tan" placeholder="TAN Number" name="tan" ng-model="employer.tan">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="tan">Address:</label>
+                                    <input type="text" class="form-control" id="address" placeholder="Address" name="address" ng-model="employer.address">   
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="orgtype">Type of Organisation:</label>
+                                    <select class="form-control" id="orgtype" name="orgtype" ng-model="employer.orgtype">
+                                        <option>Choose Organisation Type</option>
+                                        <option>Construction</option>
+                                        <option>IT/Software</option>
+                                        <option>IT/Hardware</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="regfile">Upload Files:</label>
+                                    <input type="file" class="form-control" id="regfile" placeholder="TAN Number" name="regfile" ng-model="employer.regfile">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" ng-model="employer.email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pwd">Password:</label>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" ng-model="employer.password">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pwd">Confirm Password:</label>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-sm btn-primary" ng-click="save(employer)"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                                    <button type="reset" class="btn btn-sm btn-danger" ><i class="fa fa-ban"></i> Cancel</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

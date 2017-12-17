@@ -1,0 +1,43 @@
+<div class="wallet">
+        <div class="walletIcon">
+    
+          <div class="card">
+            <div class="card-body p-3 clearfix">
+              <i class=" bg-primary p-3 font-2xl mr-3 float-left">
+                <img src="img/money.svg" alt="loader.gif" style="min-width: 48px;min-height: 22px;" />
+              </i>
+    
+              <div clas="well-sm">
+                <div class="text-muted text-uppercase font-weight-bold" style="font-size:14px;font-weight:bold">Reward</div>
+                <div class="text-danger" style="font-size:16px;font-weight:bold">10</div>
+                <div class="text-muted text-uppercase font-weight-bold" style="font-size:14px;font-weight:bold">Points</div>
+</div>
+            </div>
+    
+    
+          </div>
+        </div>
+        </div>
+<div class="container" style="margin-top: 20px;" ng-controller="labourCtrl">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="card  text-center">
+                        <div class="card-header">
+                            <strong> UNIQUE LABOUR ID</strong>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><span class="badge badge-pill badge-info" style="background-color: steelblue;font-size: large;
+                                                         width: 50%;">{{role.systemid}}</span></h4>
+                            <a class=""><img src="../../img/chart.png" alt="" width="150" height="150"/></a>
+<div id="qrcodeCanvas"></div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><button class="btn btn-primary pull-right" ng-click="go()">Proceed</button></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

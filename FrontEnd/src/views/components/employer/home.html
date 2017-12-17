@@ -1,0 +1,208 @@
+<div class="animated fadeIn" ng-controller="companycontrol">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          Company Details
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="each-contact">
+                <h4>INDIA - Chennai</h4>
+                <p>
+                  3rd Floor, "Block A", Tek Meadows,
+                  <br>No. 51,Rajiv Gandhi Salai (OMR),
+                  <br>Sholinganallur, Chennai - 600119
+                </p>
+                <p>
+                  <a href="tel:+914449098874">
+                    <i class="fa fa-phone"></i>&nbsp; +91-44 4909 8874</a>
+                </p>
+                <p>
+                  <a href="mailto:hello@tvsnext.io">
+                    <i class="fa fa-envelope-o"></i>&nbsp; hello@tvsnext.io</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 rating-tab">
+
+              <span class="heading">Rating</span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <p>4.1 average.</p>
+              <hr style="border:3px solid #f1f1f1">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-6">
+      <div class="card">
+        <div class="card-body p-0 clearfix">
+          <i class="icon-basket-loaded bg-info p-4 px-5 font-2xl mr-3 float-left"></i>
+          <div class="h5 text-info mb-0 font-weight-bold">#3</div>
+          <div class="text-muted text-uppercase font-weight-bold">Live Projects</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-6">
+      <div class="card">
+        <div class="card-body p-0 clearfix">
+          <i class="icon-people bg-danger p-4 px-5 font-2xl mr-3 float-left"></i>
+          <div class="h5 text-danger mb-0 font-weight-bold">#3480</div>
+          <div class="text-muted text-uppercase font-weight-bold">Contract Employees</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          New Job Openings
+          <a ui-sref="app.components.addJobs"><i class="fa fa-plus-circle fa-lg float-right">ADD</i></a>
+        </div>
+        <div class="card-body">
+          <div class="card-jobs" ng-repeat="pl in projectList">
+            <div class="card">
+              <div class="card-body">
+                <div class="text-muted text-uppercase font-weight-bold">Project_ID: {{pl.id}}</div>
+                <p>#{{pl.applicants}} Appointments</p>
+                <a class="h5 text-info mb-0 font-weight-bold float-right" ui-sref="app.components.jobs({projectID:pl.id})">view</a>
+              </div>
+            </div>
+          </div>
+          <!--<div class="card-jobs">
+            <div class="card">
+              <div class="card-body">
+
+                <div class="text-muted text-uppercase font-weight-bold">Project_ID: JB145</div>
+                <p>#200 Appointments</p>
+                <a class="h5 text-info mb-0 font-weight-bold float-right" ui-sref="app.components.jobs">view</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-jobs">
+            <div class="card">
+              <div class="card-body">
+                <div class="text-muted text-uppercase font-weight-bold">Project_ID: JB14</div>
+                <p>#10 Appointments</p>
+                <a class="h5 text-info mb-0 font-weight-bold float-right" ui-sref="app.components.jobs">view</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-jobs">
+            <div class="card">
+              <div class="card-body">
+                <div class="text-muted text-uppercase font-weight-bold">Project_ID: JB156</div>
+                <p>#120 Appointments</p>
+                <a class="h5 text-info mb-0 font-weight-bold float-right" ui-sref="app.components.jobs">view</a>
+              </div>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          Employee Grievances
+        </div>
+        <div class="card-body">
+          <div class="card-jobs">
+            <div class="card">
+              <div class="card-body">
+                <div class="text-muted text-uppercase font-weight-bold">Project_ID: JB12</div>
+                <p>#50 Grievances Reported</p>
+                <a class="h5 text-info mb-0 font-weight-bold float-right">view</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-jobs">
+            <div class="card">
+              <div class="card-body">
+
+                <div class="text-muted text-uppercase font-weight-bold">Project_ID: JB145</div>
+                <p>#20 Grievances Reported</p>
+                <a class="h5 text-info mb-0 font-weight-bold float-right">view</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-jobs">
+            <div class="card">
+              <div class="card-body">
+                <div class="text-muted text-uppercase font-weight-bold">Project_ID: JB14</div>
+                <p>#10 Grievances Reported</p>
+                <a class="h5 text-info mb-0 font-weight-bold float-right">view</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-jobs">
+            <div class="card">
+              <div class="card-body">
+                <div class="text-muted text-uppercase font-weight-bold">Project_ID: JB156</div>
+                <p>#120 Grievances Reported</p>
+                <a class="h5 text-info mb-0 font-weight-bold float-right">view</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12">
+      Know More ?
+    </div>
+    <div class="col-sm-12 col-md-12 col-sm-12">
+      <div class="col-sm-1 col-md-1 col-sm-1" style="text-align: center;line-height: 5;font-size:30px;padding:0;color:cadetblue"><i class="glyphicon glyphicon-chevron-left"></i></div>
+      <div  class="col-sm-10 col-md-10 col-sm-10">
+      <div class="col-sm-3 col-md-3 col-sm-3">
+        <div class="card">
+          <div class="card-body p-4 clearfix">
+            <i class=" bg-primary p-4 font-2xl mr-3 float-left font-weight-bold" style="border-radius:100%">30%</i>
+            <div class="text-muted text-uppercase font-weight-bold font-lg well-lg">of your employees not satisfied with the facilities provided by your company</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3 col-sm-3">
+        <div class="card">
+          <div class="card-body p-4 clearfix">
+            <i class=" bg-warning p-4 font-2xl mr-3 float-left font-weight-bold" style="border-radius:100%">10%</i>
+            <div class="text-muted text-uppercase font-weight-bold font-lg well-lg">of your employees not satisfied with the norms of your company</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3 col-sm-3">
+        <div class="card">
+          <div class="card-body p-4 clearfix">
+            <i class=" bg-danger p-4 font-2xl mr-3 float-left font-weight-bold" style="border-radius:100%">20%</i>
+            <div class="text-muted text-uppercase font-weight-bold font-lg well-lg">of your employees raised complaints against your company</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3 col-sm-3">
+        <div class="card">
+          <div class="card-body p-4 clearfix">
+            <i class=" bg-success p-4 font-2xl mr-3 float-left font-weight-bold" style="border-radius:100%">50%</i>
+            <div class="text-muted text-uppercase font-weight-bold font-lg well-lg">of your employees moved from your company</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 col-md-1 col-sm-1" style="text-align: center;line-height: 5;font-size:30px;padding:0;color:cadetblue"><i class="glyphicon glyphicon-chevron-right"></i></div>
+    
+    </div>
+  </div>
+</div>

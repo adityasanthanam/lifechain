@@ -1,0 +1,25 @@
+<div class="sidebar">
+  <nav class="sidebar-nav">
+    <ul class="nav">
+      <!--<li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="app.main"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info">NEW</span></a>
+      </li>-->
+
+     
+        <li ng-if="role.role=='Employer'"  ng-repeat="menu in menus.Employer" class="nav-item">
+          <a class="nav-link" ui-sref-active="active" ui-sref="{{menu.uiSref}}"><i class="icon-puzzle"></i> {{menu.name}}</a>
+        </li>
+        <li ng-if="role.role=='Employee'" ng-repeat="menu in menus.Employee" class="nav-item">
+          <a class="nav-link" ui-sref-active="active" ui-sref="{{menu.uiSref}}"><i class="icon-puzzle"></i> {{menu.name}}</a>
+        </li>
+        <li ng-if="role.role=='admin'" ng-repeat="menu in menus.Regulatory" class="nav-item">
+          <a class="nav-link" ui-sref-active="active" ui-sref="{{menu.uiSref}}"><i class="icon-puzzle"></i> {{menu.name}}</a>
+        </li>
+        <!--<li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">
+          <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.components')}" href="#"><i class="icon-puzzle"></i>{{menu.name}}</a>
+        </li>-->
+
+
+      </ul>
+  </nav>
+</div>

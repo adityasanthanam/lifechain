@@ -1,0 +1,95 @@
+<div class="ajaxload" ng-show="ajaxloader">
+    <div class="ajaxloadIcon">
+      <img src="img/ajax-loader3.gif" alt="loader.gif" />
+    </div>
+  </div>
+<div class="animated fadeIn" ng-controller="accessCtrl">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Review / Approve Employer</strong>
+        </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Employer LF ID</th>
+                  <th>Organisation Name</th>
+                  <th>TAN Number</th>
+                  <th>Registration Number</th>
+                  <th>Approve/Cancel</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="empdata in Accessdata[0].employer">
+                  <td>{{empdata.systemid}}</td>
+                  <td>{{empdata.name}}</td>
+                  <td>{{empdata.orgtype}}</td>
+                  <td>
+                    {{empdata.regnum}}
+                  </td>
+                  <td>
+                      <button type="submit" class="btn btn-sm btn-success" ng-click="empApprove(empdata)">
+                          <i class="fa fa-check"></i> Approve</button>
+                        <button type="reset" class="btn btn-sm btn-danger" ng-click="empReject(empdata)">
+                          <i class="fa fa-ban"></i> Reject</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Review / Approve Job Opening</strong>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Project</th>
+                  <th>Skill</th>
+                  <th># of Openings</th>
+                  <th>Experience</th>
+                  <th>Approve/Cancel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="empdata in Accessdata[1].job_post">
+                  <td>{{empdata.projectName}}</td>
+                  <td>{{empdata.skill}}</td>
+                  <td>{{empdata.openings}}</td>
+                  <td>
+                    {{empdata.exptime}}{{empdata.expduration}}
+                  </td>
+                  <td>
+                      <button type="submit" class="btn btn-sm btn-success" ng-click="jobApprove(empdata)">
+                          <i class="fa fa-check"></i> Approve</button>
+                        <button type="reset" class="btn btn-sm btn-danger" ng-click="jobReject(empdata)">
+                          <i class="fa fa-ban"></i> Reject</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
