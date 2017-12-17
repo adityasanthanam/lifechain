@@ -1,0 +1,57 @@
+/**
+ * Access control rules for org.blockchain.network
+ */
+
+
+//Regulatory to have access only to their own account
+rule RegulatoryAccessOwnRecord {
+    description: "Allow Regulatory to access only their profile"
+    participant(p): "org.blockchain.network.Regulatory"
+    operation: READ, UPDATE, DELETE
+    resource(r): "org.blockchain.network.Regulatory"
+    condition: (r.getIdentifier() === p.getIdentifier())
+    action: ALLOW
+}
+//Employee to have access only to their own account
+rule EmployeeAccessOwnRecord {
+    description: "Allow Employee to access only their profile"
+    participant(p): "org.blockchain.network.Employee"
+    operation: READ, UPDATE, DELETE
+    resource(r): "org.blockchain.network.Employee"
+    condition: (r.getIdentifier() === p.getIdentifier())
+    action: ALLOW
+}
+//Employer to have access only to their own account
+rule EmployerAccessOwnRecord {
+    description: "Allow Employer to access only their profile"
+    participant(p): "org.blockchain.network.Employer"
+    operation: READ, UPDATE, DELETE
+    resource(r): "org.blockchain.network.Employer"
+    condition: (r.getIdentifier() === p.getIdentifier())
+    action: ALLOW
+}
+
+//Employer to have read access to all Employee public data assets
+rule EmployerAccessEmployeePublicDataRecord {
+    description: "Allow Employer to have read access to all Employee public data assets"
+    participant: "org.blockchain.network.Employer"
+    operation: READ
+    resource: "org.blockchain.network.EmployeePublicData"    
+    action: ALLOW
+}
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}

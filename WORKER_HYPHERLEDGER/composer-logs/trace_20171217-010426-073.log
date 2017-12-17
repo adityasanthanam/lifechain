@@ -1,0 +1,2 @@
+2017-12-16T19:34:38.757Z ERROR   HLFConnectionManager    :fabric-client()          [client-utils.js]: sendPeersProposal - Promise is rejected: Error: chaincode error (status: 500, message: Error installing chaincode code blockchain-network:0.14.1(chaincode /var/hyperledger/production/chaincodes/blockchain-network.0.14.1 exists))
+    at /home/ubuntu/.nvm/versions/node/v6.11.4/lib/node_modules/composer-cli/node_modules/fabric-client/node_modules/grpc/src/node/src/client.js:434:17 {}$

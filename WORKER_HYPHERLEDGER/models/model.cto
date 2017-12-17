@@ -1,0 +1,129 @@
+/**
+ * blockchain network
+ */
+namespace org.blockchain.network
+
+participant Regulatory identified by regulatoryID {
+    o String regulatoryID
+    o String name
+    --> RegulatoryPublicData publicData
+    --> RegulatoryPrivateData privateData
+}
+asset RegulatoryPublicData identified by regulatorypublicID {
+    o String regulatorypublicID
+    o String data
+    o String ownerID
+    --> Regulatory owner    
+}
+asset RegulatoryPrivateData identified by regulatoryprivateID {
+    o String regulatoryprivateID
+    o String data
+    o String ownerID
+    --> Regulatory owner    
+}
+transaction RegulatoryPublicDataTransaction {
+  --> RegulatoryPublicData asset
+  o String newdata
+}
+transaction RegulatoryPrivateDataTransaction {
+  --> RegulatoryPrivateData asset
+  o String newdata
+}
+
+participant Employee identified by employeeID {
+    o String employeeID
+    o String name
+    --> EmployeePublicData publicData
+    --> EmployeePrivateData privateData
+}
+asset EmployeePublicData identified by employeepublicID {
+    o String employeepublicID
+    o String data
+    o String ownerID
+    --> Employee owner    
+}
+asset EmployeePrivateData identified by employeeprivateID {
+    o String employeeprivateID
+    o String data
+    o String ownerID
+    --> Employee owner    
+}
+asset EmployeeJobpost identified by employeeJobpostID {
+    o String employeeJobpostID
+    o String data
+    o String employerjobpostID
+    o String employerprojectID
+    o String status
+    o String employerstatus
+    o String ownerID
+    --> Employee owner    
+}
+transaction EmployeeJobpostTransaction {
+  --> EmployeeJobpost asset
+  o String newdata
+}
+transaction EmployeePublicDataTransaction {
+  --> EmployeePublicData asset
+  o String newdata
+}
+transaction EmployeePrivateDataTransaction {
+  --> EmployeePrivateData asset
+  o String newdata
+}
+
+participant Employer identified by employerID {
+    o String employerID
+    o String name
+    o String status
+    --> EmployerPublicData publicData
+    --> EmployerPrivateData privateData
+}
+asset EmployerPublicData identified by employerpublicID {
+    o String employerpublicID
+    o String data
+    o String ownerID
+    --> Employer owner    
+}
+asset EmployerPrivateData identified by employerprivateID {
+    o String employerprivateID
+    o String data
+    o String ownerID
+    --> Employer owner    
+}
+asset EmployerProject identified by employerprojectID {
+    o String employerprojectID
+    o String data
+    o String ownerID
+    --> Employer owner    
+}
+asset EmployerJobpost identified by employerjobpostID {
+    o String employerjobpostID
+    o String data
+    o String employerprojectID
+    o String ownerID
+    o String status
+    --> Employer owner    
+}
+transaction EmployerPublicDataTransaction {
+  --> EmployerPublicData asset
+  o String newdata
+}
+transaction EmployerPrivateDataTransaction {
+  --> EmployerPrivateData asset
+  o String newdata
+}
+transaction EmployerProjectTransaction {
+  --> EmployerProject asset
+  o String newdata
+}
+transaction EmployerJobpostTransaction {
+  --> EmployerJobpost asset
+  o String newdata
+}
+
+
+
+
+
+
+

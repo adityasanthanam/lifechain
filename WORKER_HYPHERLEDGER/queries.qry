@@ -1,0 +1,90 @@
+/**
+ * New query file
+ */
+query selectRegulatory {
+  description: "Select all Regulatory"
+  statement:
+      SELECT org.blockchain.network.Regulatory
+}
+
+query selectEmployee {
+  description: "Select all Employees"
+  statement:
+      SELECT org.blockchain.network.Employee
+}
+
+query selectEmployer {
+  description: "Select all  Employer"
+  statement:
+      SELECT org.blockchain.network.Employer
+}
+query selectRegulatoryPublicData {
+  description: "Select all RegulatoryPublicData"
+  statement:
+      SELECT org.blockchain.network.RegulatoryPublicData
+}
+query selectRegulatoryPrivateData {
+  description: "Select all RegulatoryPrivateData"
+  statement:
+      SELECT org.blockchain.network.RegulatoryPrivateData
+}
+query selectEmployeePublicData {
+  description: "Select all EmployeePublicData"
+  statement:
+      SELECT org.blockchain.network.EmployeePublicData
+}
+query selectEmployeePrivateData {
+  description: "Select all EmployeePrivateData"
+  statement:
+      SELECT org.blockchain.network.EmployeePrivateData
+}
+query selectEmployerPublicData {
+  description: "Select all EmployerPublicData"
+  statement:
+      SELECT org.blockchain.network.EmployerPublicData
+}
+query selectEmployerPrivateData {
+  description: "Select all EmployerPrivateData"
+  statement:
+      SELECT org.blockchain.network.EmployerPrivateData
+}
+query selectEmployeeJobpostbyprojectid {
+  description: "Select all Employer job post by project id"
+  statement:
+      SELECT org.blockchain.network.EmployeeJobpost WHERE (employerprojectID == _$employerprojectIDParam)
+}
+query selectEmployeeJobpostbyjobpostid {
+  description: "Select all Employer job post by id"
+  statement:
+      SELECT org.blockchain.network.EmployeeJobpost WHERE (employerjobpostID == _$employerjobpostIDParam)
+}
+query selectEmployerProject {
+  description: "Select all EmployerProject"
+  statement:
+      SELECT org.blockchain.network.EmployerProject
+}
+query selectEmployerJobpost {
+  description: "Select all EmployerJobpost"
+  statement:
+      SELECT org.blockchain.network.EmployerJobpost
+}
+query selectEmployerJobpostbyemployerid {
+  description: "Select all Employer job post by employer id"
+  statement:
+      SELECT org.blockchain.network.EmployerJobpost WHERE (ownerID == _$employerIDParam)
+}
+query showLifechainAllHistorians{ 
+  description: "Select Lifechain all historians" 
+  statement: 
+    SELECT org.hyperledger.composer.system.HistorianRecord FROM 
+HistorianRegistry
+          WHERE (transactionType == 'AddAsset' OR transactionType == 
+'UpdateAsset' OR transactionType == 'RemoveAsset') 
+} 
+ 
+query findLifechainHistoriansWithTime{ 
+  description: "Find Lifechain historians after a specified time" 
+  statement: 
+    SELECT org.hyperledger.composer.system.HistorianRecord FROM 
+HistorianRegistry WHERE (transactionTimestamp > _$justnow) 
+}
