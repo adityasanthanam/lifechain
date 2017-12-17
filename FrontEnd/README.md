@@ -38,6 +38,6 @@ Now you can access the application
 
 ![screen4.PNG](https://raw.githubusercontent.com/adityasanthanam/lifechain/master/images/screen4.PNG)
 
-![screen4.PNG](https://raw.githubusercontent.com/adityasanthanam/lifechain/master/images/screen4.PNG)
+![screen5.PNG](https://raw.githubusercontent.com/adityasanthanam/lifechain/master/images/screen5.PNG)
 
-![screen4.PNG](https://raw.githubusercontent.com/adityasanthanam/lifechain/master/images/screen4.PNG)
+![screen6.PNG](https://raw.githubusercontent.com/adityasanthanam/lifechain/master/images/screen6.PNG)
