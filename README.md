@@ -81,4 +81,5 @@ The system architecture runs on Hyperledger Fabric with every node consisting of
 
 The worker wallet runs on private ethereum network where the system logic is built as smart contracts. Ethereum and Hyperledger are both dockerized and placed together on a single container making the architecture easily deployable.
 
-
+# API & Libraries
+The information on APIs and other libraries with reference to the project are provided in the respective folders.
