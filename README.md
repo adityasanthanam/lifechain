@@ -1,15 +1,6 @@
-# Lifechain
-# Project on Blockchain
+![Worker](https://raw.githubusercontent.com/adityasanthanam/lifechain/master/images/logo.png)
 
-            
-
-
-
-
-
-
-
-# NEXT LIFE CHAIN
+# Project on Blockchain   
 
 
 # Background:
